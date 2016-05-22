@@ -1,6 +1,6 @@
 Bedrock mod.
 
-Version 1.0.0
+Version 1.1.0
 
 This mod adds an indestructible bedrock layer at the bottom of the world.
 
