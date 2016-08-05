@@ -1,3 +1,11 @@
+local S
+if (minetest.get_modpath("intllib")) then
+	dofile(minetest.get_modpath("intllib").."/intllib.lua")
+	S = intllib.Getter(minetest.get_current_modname())
+else
+	S = function ( s ) return s end
+end
+
 local bedrock = {}
 
 bedrock.layer = -30912 -- determined as appropriate by experiment
@@ -30,7 +38,7 @@ minetest.register_on_generated(function(minp, maxp)
 end)
 
 minetest.register_node("bedrock2:bedrock", {
-	description = "Bedrock",
+	description = S("Bedrock"),
 	tiles = {"bedrock2_bedrock.png"},
 	groups = {immortal=1, not_in_creative_inventory=1, in_doc = 1 },
 	sounds = { footstep = { name = "bedrock2_step", gain = 1 } },
@@ -47,5 +55,5 @@ if minetest.get_modpath("mesecons_mvps") ~= nil then
 end
 
 if minetest.get_modpath("doc_items") ~= nil then
-	doc.sub.items.set_items_longdesc({["bedrock2:bedrock"] = "Bedrock is a very hard block. It cannot be mined, altered, destroyed or moved by any means. It appears at the bottom of the world in a flat layer."})
+	doc.sub.items.set_items_longdesc({["bedrock2:bedrock"] = S("Bedrock is a very hard block. It cannot be mined, altered, destroyed or moved by any means. It appears at the bottom of the world in a flat layer.")})
 end
