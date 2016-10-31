@@ -39,6 +39,7 @@ end)
 
 minetest.register_node("bedrock2:bedrock", {
 	description = S("Bedrock"),
+	x_doc_items_longdesc = S("Bedrock is a very hard block. It cannot be mined, altered, destroyed or moved by any means. It appears at the bottom of the world in a flat layer."),
 	tiles = {"bedrock2_bedrock.png"},
 	groups = {immortal=1, not_in_creative_inventory=1, in_doc = 1 },
 	sounds = { footstep = { name = "bedrock2_step", gain = 1 } },
@@ -52,8 +53,4 @@ minetest.register_node("bedrock2:bedrock", {
 
 if minetest.get_modpath("mesecons_mvps") ~= nil then
 	mesecon:register_mvps_stopper("bedrock2:bedrock")
-end
-
-if minetest.get_modpath("doc_items") ~= nil then
-	doc.sub.items.set_items_longdesc({["bedrock2:bedrock"] = S("Bedrock is a very hard block. It cannot be mined, altered, destroyed or moved by any means. It appears at the bottom of the world in a flat layer.")})
 end
