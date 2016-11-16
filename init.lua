@@ -39,7 +39,7 @@ end)
 
 minetest.register_node("bedrock2:bedrock", {
 	description = S("Bedrock"),
-	x_doc_items_longdesc = S("Bedrock is a very hard block. It cannot be mined, altered, destroyed or moved by any means. It appears at the bottom of the world in a flat layer."),
+	_doc_items_longdesc = S("Bedrock is a very hard block. It cannot be mined, altered, destroyed or moved by any means. It appears at the bottom of the world in a flat layer."),
 	tiles = {"bedrock2_bedrock.png"},
 	groups = {immortal=1, not_in_creative_inventory=1, },
 	sounds = { footstep = { name = "bedrock2_step", gain = 1 } },
