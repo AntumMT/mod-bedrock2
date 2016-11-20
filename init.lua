@@ -52,5 +52,5 @@ minetest.register_node("bedrock2:bedrock", {
 })
 
 if minetest.get_modpath("mesecons_mvps") ~= nil then
-	mesecon:register_mvps_stopper("bedrock2:bedrock")
+	mesecon.register_mvps_stopper("bedrock2:bedrock")
 end
