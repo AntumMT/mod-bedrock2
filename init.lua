@@ -16,6 +16,10 @@ if depth ~= nil then
 	bedrock.layer = depth
 end
 
+if minetest.settings:get_bool("log_mods") then
+	minetest.log("action", "[" .. minetest.get_current_modname() .. "] Bedrock depth: " .. tostring(depth))
+end
+
 minetest.register_on_generated(function(minp, maxp)
 	if maxp.y >= bedrock.layer and minp.y <= bedrock.layer then
 		local vm, emin, emax = minetest.get_mapgen_object("voxelmanip")
